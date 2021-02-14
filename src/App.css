@@ -33,33 +33,9 @@
     right: 0;
   }
 }
-/*animated scroll arrow animation*/
-@-webkit-keyframes ca3_fade_move_down {
-  0% {
-    -webkit-transform: translate(0, -20px);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translate(0, 20px);
-    opacity: 0;
-  }
-}
-@-moz-keyframes ca3_fade_move_down {
-  0% {
-    -moz-transform: translate(0, -20px);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -moz-transform: translate(0, 20px);
-    opacity: 0;
-  }
-}
+
+/* movimiento de la flecha  */
+
 @keyframes ca3_fade_move_down {
   0% {
     transform: translate(0, -20px);
@@ -157,7 +133,6 @@ body {
   position: absolute;
   left: 45%;
   top: 400px;
-  overflow: hidden;
   opacity: 0.7;
   transition: 1s;
   animation-name: aparicion;
@@ -167,14 +142,6 @@ body {
 #container .portada-principal .rombo:nth-child(1) {
   width: 60px;
   height: 60px;
-  background: #6fd878;
-  -webkit-transform: rotate(45deg) skew(15deg, 15deg);
-  -moz-transform: rotate(45deg) skew(15deg, 15deg);
-  -ms-transform: rotate(45deg) skew(15deg, 15deg);
-  -o-transform: rotate(45deg) skew(15deg, 15deg);
-  transform: rotate(45deg) skew(15deg, 15deg);
-
-  position: absolute;
   left: 52%;
   top: 300px;
   overflow: hidden;
@@ -186,39 +153,16 @@ body {
 #container .portada-principal .rombo:nth-child(2) {
   width: 30px;
   height: 30px;
-  background: #6fd878;
-  -webkit-transform: rotate(45deg) skew(15deg, 15deg);
-  -moz-transform: rotate(45deg) skew(15deg, 15deg);
-  -ms-transform: rotate(45deg) skew(15deg, 15deg);
-  -o-transform: rotate(45deg) skew(15deg, 15deg);
-  transform: rotate(45deg) skew(15deg, 15deg);
-
-  position: absolute;
   left: 46.8%;
   top: 130px;
-  overflow: hidden;
-  opacity: 0.8;
-
-  animation-name: aparicion;
   animation-duration: 1s;
 }
 
 #container .portada-principal .rombo:nth-child(3) {
   width: 30px;
   height: 30px;
-  background: #6fd878;
-  -webkit-transform: rotate(45deg) skew(15deg, 15deg);
-  -moz-transform: rotate(45deg) skew(15deg, 15deg);
-  -ms-transform: rotate(45deg) skew(15deg, 15deg);
-  -o-transform: rotate(45deg) skew(15deg, 15deg);
-  transform: rotate(45deg) skew(15deg, 15deg);
-
-  position: absolute;
   left: 45.8%;
   top: 600px;
-  opacity: 0.8;
-
-  animation-name: aparicion;
   animation-duration: 0.5s;
 }
 
@@ -227,7 +171,7 @@ body {
   width: 100px;
   position: absolute;
   bottom: 10px;
-  left: 45.8%;
+  left: 47%;
   cursor: pointer;
 }
 
@@ -270,7 +214,7 @@ body {
 }
 
 /* --------------------------------- Contacto-portada  */
-*/ #container .portada-contacto {
+#container .portada-contacto {
   width: 4.9%;
   border-left: 0.5px solid rgba(255, 255, 255, 0.329);
   display: flex;
@@ -293,3 +237,103 @@ body {
 }
 
 /* ------------------------------------------------------------------------ Proyectos  */
+
+.proyecto{
+  background-color: rgba(255, 255, 255, 0.329);
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 2s;
+
+}
+
+.proyecto .proyecto-circulo{
+  position: relative;
+  background-color: black;
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  margin: auto;
+  transition: 2s;
+}
+
+.proyecto .proyecto-circulo-borde{
+  content: "";
+    position: absolute;
+  height: 650px;
+  width: 650px;
+  border-radius: 50%;
+  border: 1px solid rgb(12, 12, 12);
+animation: movimiento-circulo 25s infinite reverse;
+transition: 2s;
+
+}
+.proyecto .proyecto-circulo-transparencia{
+  content: "";
+    position: absolute;
+    background-color: rgba(217, 255, 0, 0.274);
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  animation: movimiento-circulo 10s infinite;
+  transition: 2s;
+
+}
+
+.proyecto .proyecto-circulo:hover .proyecto-circulo-transparencia{
+transition: 2s;
+animation-play-state: paused;
+/* opacity: 0; */
+top: 0 ;
+left: 0;
+
+}
+.proyecto .proyecto-circulo:hover .proyecto-circulo-borde{
+  transition: 2s;
+  animation-play-state: paused, running;
+  opacity: 0;
+  }
+@keyframes movimiento-circulo {
+  0%{
+    top: 0px;
+    left: 0px;
+  }
+  25%{
+    left: 50px;
+  }
+  35%{
+    top: 30px;
+    left: 50px;
+  }
+  50%{
+    top: 50px;
+    left: 0px;
+  }
+  60%{
+    top: 40px;
+    left: -40px;
+    }
+  75%{
+    left: 30px;
+    }
+    85%{
+    left: 80px;
+
+    }
+  100%{
+    top: 0px;
+    left: 0px;  
+  }
+}
+
+.proyecto .proyecto-circulo h2 {
+  transition: 2s;
+  position: absolute;
+  bottom: 0;
+  font-size: 400%;
+  right: -20%;
+}
+
+ 

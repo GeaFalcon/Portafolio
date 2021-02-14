@@ -26,7 +26,6 @@ const Portada = () => {
         </div>
       </div>
       <div className="portada-contacto">
-        <div className="contacto-logo"></div>
         <h2 className="contactar"> contactar</h2>
       </div>
     </div>
